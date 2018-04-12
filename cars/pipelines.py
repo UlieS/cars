@@ -31,6 +31,7 @@ class CarsPipeline(object):
         def format(self, item):
              line="\n\n" 
              for k in item.keys():
+                 if k=="_id": continue 
                  value=str(item[k]) if not isinstance(item[k], datetime) else item[k].strftime("%d.%m.%Y %H:%M")
                  line=line + str(k)+": "+ value +"\n"
              return line
